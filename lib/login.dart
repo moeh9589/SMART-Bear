@@ -20,15 +20,22 @@ class _LoginPageState extends State<LoginPage> {
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              const SizedBox(height: 100),
               const Padding(
                   padding: EdgeInsets.only(top: 60.0),
                   child: Center(
-                    child: Text(
-                        'SMART Bear',
-                        style: TextStyle(color: Colors.black, fontSize: 24)
-                    ),
+                    child: Image(
+                      image: AssetImage('assets/unco-bear-logo.png'),
+                      width: 150,
+                      height: 150,
+                    )
                   )
+              ),
+              const Padding(
+                  padding: EdgeInsets.only(top: 2.0),
+                child: Text(
+                  'SMART Bear Tutor',
+                  style: TextStyle(color: Colors.black, fontSize: 25),
+                )
               ),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),

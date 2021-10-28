@@ -1,4 +1,4 @@
-package com.unco.smart_bear_tutor
+package com.unco.smartbeartutor
 
 import io.flutter.embedding.android.FlutterActivity
 

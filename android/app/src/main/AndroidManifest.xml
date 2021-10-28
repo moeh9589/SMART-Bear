@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.unco.smart_bear_tutor">
+    package="com.unco.smartbeartutor">
    <application
         android:label="smart_bear_tutor"
         android:icon="@mipmap/ic_launcher">

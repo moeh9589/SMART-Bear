@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_bear_tutor/push_notification_option.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -56,6 +57,7 @@ class _LoginPageState extends State<LoginPage> {
                         child: TextButton(
                           onPressed: () {
                             // TODO: Use Firebase Microsoft Login
+                            _moveToPushNotificationOption();
                           },
                           child: const Text('Sign In with Microsoft BearMail',
                               style:
@@ -66,4 +68,12 @@ class _LoginPageState extends State<LoginPage> {
       ),
     ));
   }
+  
+  void _moveToPushNotificationOption() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const PushNotificationOptionsPage())
+    );
+  }
+  
 }

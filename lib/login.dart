@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -13,83 +11,59 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-            title: const Text("Login")
-        ),
         body: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              const Padding(
-                  padding: EdgeInsets.only(top: 60.0),
-                  child: Center(
-                    child: Image(
-                      image: AssetImage('assets/unco-bear-logo.png'),
-                      width: 150,
-                      height: 150,
-                    )
-                  )
-              ),
-              const Padding(
-                  padding: EdgeInsets.only(top: 2.0),
-                child: Text(
-                  'SMART Bear Tutor',
-                  style: TextStyle(color: Colors.black, fontSize: 25),
-                )
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                child: TextField(
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Email',
-                      hintText: 'Enter a valid email id as abc@domain.com'
-                  ),
+      child: Column(
+        children: <Widget>[
+          const Padding(
+              padding: EdgeInsets.only(top: 100.0),
+              child: Center(
+                  child: Image(
+                image: AssetImage('assets/unco-bear-letter-logo.png'),
+                width: 250,
+                height: 250,
+              ))),
+          const Padding(
+              padding: EdgeInsets.only(top: 25.0),
+              child: Center(
+                  child: Text('Welcome to',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold)))),
+          const Center(
+              child: Text('Smart Bear Tutoring App',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold))),
+          Padding(
+              padding: const EdgeInsets.only(top: 100.0),
+              child: Column(children: <Widget>[
+                const Center(
+                  child: Text('Please sign in with the Microsoft',
+                      style: TextStyle(color: Colors.black, fontSize: 20)),
                 ),
-              ),
-              const Padding(
-                padding: EdgeInsets.only(
-                    left: 15.0, right: 15.0, top: 15, bottom: 0
-                ),
-                child: TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Password',
-                    hintText: 'Enter secure password',
-                  ),
-                ),
-              ),
-              TextButton(
-                onPressed: () {
-                  // TODO: Forgot Password Screen
-                },
-                child: const Text(
-                  'Forgot Password',
-                  style: TextStyle(color: Colors.blue, fontSize: 15),
-                ),
-              ),
-              Container(
-                  height: 50,
-                  width: 250,
-                  decoration: BoxDecoration(
-                    color: Colors.blue, borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: TextButton(
-                    onPressed: () {
-                      // TODO: Validate Login and Redirect to Dashboard Page
-                    },
-                    child: const Text(
-                        'Login',
-                        style: TextStyle(color: Colors.white, fontSize: 25)
-                    ),
-                  )
-              ),
-              const SizedBox(height: 130),
-              const Text('New User? Create Account')
-            ],
-          ),
-        )
-    );
+                const Center(
+                    child: Text('Single Sign On (SSO)',
+                        style: TextStyle(color: Colors.black, fontSize: 20))),
+                Padding(
+                    padding: const EdgeInsets.only(top: 35.0),
+                    child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: TextButton(
+                          onPressed: () {
+                            // TODO: Use Firebase Microsoft Login
+                          },
+                          child: const Text('Sign In with Microsoft BearMail',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20)),
+                        )))
+              ])),
+        ],
+      ),
+    ));
   }
 }

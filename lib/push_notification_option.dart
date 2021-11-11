@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class PushNotificationOptionsPage extends StatefulWidget {
-  const PushNotificationOptionsPage({Key? key}) : super(key: key);
+class PushNotificationOptionsView extends StatefulWidget {
+  const PushNotificationOptionsView({Key? key}) : super(key: key);
 
   @override
-  _PushNotificationOptionsPageState createState() =>
-      _PushNotificationOptionsPageState();
+  _PushNotificationOptionsViewState createState() =>
+      _PushNotificationOptionsViewState();
 }
 
-class _PushNotificationOptionsPageState
-    extends State<PushNotificationOptionsPage> {
+class _PushNotificationOptionsViewState
+    extends State<PushNotificationOptionsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "13569329519-42asf8irefaavuv8mv0j3sben06d20l7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.unco.smartbeartutor",
+            "certificate_hash": "1f609f888d7c316142fefa86c6584bc9b85f6137"
+          }
+        },
+        {
           "client_id": "13569329519-n847ikr2s2p2kt4les4mqlhajtsragbq.apps.googleusercontent.com",
           "client_type": 3
         }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:smart_bear_tutor/login_view.dart';
 import 'package:smart_bear_tutor/push_notification_option.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -18,6 +19,7 @@ class _RegisterViewState extends State<RegisterView> {
   final TextEditingController _passwordController = TextEditingController();
   late bool _success;
   late String _userEmail;
+  bool _isAdmin = false;
 
   @override
   Widget build(BuildContext context) {
@@ -62,6 +64,16 @@ class _RegisterViewState extends State<RegisterView> {
                             return null;
                           },
                         )),
+                    CheckboxListTile(
+                      title: const Text('Admin?'),
+                      value: _isAdmin,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          _isAdmin = value!;
+                        });
+                      },
+                      controlAffinity: ListTileControlAffinity.leading,
+                    ),
                     Center(
                         child: Container(
                             height: 50,
@@ -115,13 +127,21 @@ class _RegisterViewState extends State<RegisterView> {
         _success = true;
         _userEmail = user.email!;
       });
-      // TODO: Create Document for a User
+      _createUserDocument(user, _emailController.text, _isAdmin);
       _moveToPushNotificationView();
     } else {
       setState(() {
         _success = false;
       });
     }
+  }
+
+  Future<void> _createUserDocument(
+      User user, String email, bool isAdmin) async {
+    FirebaseFirestore.instance
+        .collection('User')
+        .doc(user.uid)
+        .set({'email': email, 'admin': isAdmin});
   }
 
   void _moveToPushNotificationView() {

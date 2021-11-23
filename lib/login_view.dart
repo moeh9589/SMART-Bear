@@ -127,7 +127,8 @@ class _LoginViewState extends State<LoginView> {
       // Student goes to student
       // Admin goes to admin
       // Ect
-      moveToTempDashboard(context);
+      // moveToTempDashboard(context); // Used to test Chat Features
+      moveToStudentDashboardView(context);
     } else {
       setState(() {
         _success = false;

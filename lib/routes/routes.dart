@@ -4,6 +4,7 @@ import 'package:smart_bear_tutor/models/chatroom.dart';
 import 'package:smart_bear_tutor/push_notification_option.dart';
 import 'package:smart_bear_tutor/register_view.dart';
 import 'package:smart_bear_tutor/views/chat_view.dart';
+import 'package:smart_bear_tutor/views/dashboard_student.dart';
 import 'package:smart_bear_tutor/views/question_view.dart';
 import 'package:smart_bear_tutor/views/temp_dashboard.dart';
 import 'package:smart_bear_tutor/views/user_accounts_view.dart';
@@ -18,6 +19,11 @@ void moveToLoginViewLogout(context) {
       context,
       MaterialPageRoute(builder: (context) => const LoginView()),
       (route) => false);
+}
+
+void moveToStudentDashboardView(context) {
+  Navigator.pushReplacement(context,
+      MaterialPageRoute(builder: (context) => const DashboardStudentPage()));
 }
 
 void moveToPushNotificationView(context) {

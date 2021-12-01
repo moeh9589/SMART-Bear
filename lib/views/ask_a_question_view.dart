@@ -103,6 +103,16 @@ class _AskAQuestionViewState extends State<AskAQuestionView> {
   void _submitNewQuestion() async {
     if (_formKey.currentState!.validate()) {
       final _userId = currentUserUid();
+      QuerySnapshot questionCollection = await Firestore.instance.collection("collection").getDocuments();
+      for (int i = 0; i < questionCollection.documents.length; i++) {
+        var a = querySnapshot.documents[i];
+        print(a.documentID);
+          if (_userId == a.authorId & _classController.text == a.classCode) {
+            return false
+          }
+  }
+
+
       Question _newQuestion = Question(
           authorId: _userId!,
           classCode: _classController.text,
